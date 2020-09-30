@@ -16,8 +16,8 @@ let mobileMenuOpenClose = function(evt){
 toggleMenuButton.addEventListener('click', mobileMenuOpenClose);
 
 const getDate = new Date();
-//const month = getDate.getMonth();
-const month = 11;
+const month = getDate.getMonth();
+
 const body = document.querySelector('body');
 
 if(month === 0 || month === 1 || month === 11) {
