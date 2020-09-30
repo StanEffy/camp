@@ -71,7 +71,9 @@ input[type='radio'].visually-hidden {
 .plain-text-paragraph {
   font-size: 18px;
   line-height: 24px;
-  padding-right: 20px; }
+  padding: 0;
+  margin: 0;
+  padding-bottom: 14px; }
 
 .external-link {
   color: #0882c6; }
@@ -83,6 +85,22 @@ input[type='radio'].visually-hidden {
   .external-link:active {
     color: #006ea5;
     font-weight: bold; }
+
+.content > section {
+  background-color: #ffffff;
+  padding: 20px; }
+
+@media (min-width: 700px) {
+  .content {
+    padding-top: 40px;
+    padding-bottom: 20px; }
+  .content > section {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-left: 80px;
+    padding-right: 80px;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+    margin-bottom: 20px; } }
 
 .main__header {
   background-image: url(../img/logo-min.png);
@@ -237,7 +255,8 @@ input[type='radio'].visually-hidden {
   padding-bottom: 18px; }
 
 .header-list__main:hover .inner-list__link:hover {
-  background-color: #006633; }
+  background-color: #006633;
+  color: #CC9900; }
 
 .news-list {
   min-width: 10.5%; }
@@ -247,7 +266,11 @@ input[type='radio'].visually-hidden {
 
 .inner-list {
   position: absolute;
-  top: 80px; }
+  top: 80px;
+  border-top: 1px solid #0882c6; }
+
+.inner-list__item {
+  border-bottom: 1px solid #0882c6; }
 
 .inner-list__link {
   padding-top: 14px;
@@ -362,7 +385,7 @@ input[type='radio'].visually-hidden {
     right: 0px; } }
 
 /* main-header__list-item.scss */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .main-header__list-item {
     border-top: 1px solid #16584d;
     border-bottom: 1px solid #16584d; }
@@ -380,12 +403,11 @@ input[type='radio'].visually-hidden {
           flex-grow: 1; }
 
 /*main-page__content.scss*/
-.main-page__content,
 .content {
-  background-color: #FFFFFF;
-  min-height: 200px;
-  padding-top: 40px;
-  padding-left: 20px; }
+  min-height: 200px; }
+
+.main-list__item {
+  padding-bottom: 20px; }
 
 .main-footer {
   margin: 0;
@@ -599,6 +621,9 @@ input[type='radio'].visually-hidden {
 .docs-list li:hover {
   list-style: none; }
 
+.organization-section {
+  margin-bottom: 20px; }
+
 .organization__headline {
   margin-left: 40px;
   text-transform: uppercase;
@@ -673,7 +698,8 @@ input[type='radio'].visually-hidden {
   padding-left: 0; }
 
 .news-item__image {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  padding-top: 20px; }
 
 @media (min-width: 700px) {
   .news-page-cover {
@@ -686,17 +712,30 @@ input[type='radio'].visually-hidden {
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;
         -ms-flex-direction: row;
-            flex-direction: row; }
+            flex-direction: row;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
   .news-item {
     margin-bottom: 20px;
     border-bottom: none; }
   .news__text--headline {
     font-size: 2em;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    width: 100%; }
   .news-text__cover {
-    padding-left: 40px; }
+    -webkit-flex-basis: 320px;
+        -ms-flex-preferred-size: 320px;
+            flex-basis: 320px;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
   .news-item__image {
-    margin-bottom: 0px; } }
+    margin-bottom: 0;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    padding-top: 0; } }
 
 .news-item__cover {
   padding-bottom: 40px; }
@@ -705,12 +744,13 @@ input[type='radio'].visually-hidden {
   font-size: 24px;
   color: #ffffff;
   text-align: center;
-  margin: 20px; }
+  margin: 20px;
+  text-shadow: 0px 0px 2px #1E796A; }
 
 .request-form {
   background-color: #ffffff;
   max-width: 600px;
-  padding: 20px 0px;
+  padding: 20px;
   margin: 0 auto; }
   .request-form input:focus {
     outline: none;
@@ -787,10 +827,12 @@ input[type='radio'].visually-hidden {
     border-radius: 3px;
     box-shadow: 0px 0px 2px 1px #cc9900; }
   .request-form__button:hover {
-    box-shadow: 0px 0px 5px 1px black; }
+    box-shadow: 0px 0px 5px 1px black;
+    color: #218977; }
   .request-form__button:active {
-    background-color: #ffc73e;
-    color: #00cd42; }
+    background-color: #e8b31b;
+    color: #165449;
+    box-shadow: inset 0px 0px 5px 1px rgba(0, 0, 0, 0.5); }
 
 /*@import 'index-page/main__header/main__header.scss';
 @import 'index-page/main__header/main__header.scss';
