@@ -46,3 +46,33 @@ let mobileMenuOpenClose = function(evt){
 }
 
 toggleMenuButton.addEventListener('click', mobileMenuOpenClose);
+
+const galleryShowNext = document.querySelector('.pictures-container__button--right');
+const galleryShowPrevious = document.querySelector('.pictures-container__button--left');
+const pictureContainer = document.querySelector('.pictures-container');
+const picsArray = pictureContainer.querySelectorAll('.news-picture');
+let index = 0;
+galleryShowNext.addEventListener('click', function () {
+		if(index === picsArray.length - 1){
+			picsArray.forEach(elem => elem.classList.remove('news-picture--active'));
+			index = 0;
+			picsArray[index].classList.add('news-picture--active')
+		} else {
+			picsArray.forEach(elem => elem.classList.remove('news-picture--active'));
+			picsArray[index+1].classList.add('news-picture--active');
+			index += 1;
+		}
+	console.log(index);
+});
+galleryShowPrevious.addEventListener('click', function () {
+	if(index === 0 ){
+		picsArray.forEach(elem => elem.classList.remove('news-picture--active'));
+		index = picsArray.length - 1;
+		picsArray[index - 1].classList.add('news-picture--active');
+	} else {
+		picsArray.forEach(elem => elem.classList.remove('news-picture--active'));
+		picsArray[index - 1].classList.add('news-picture--active');
+		index -= 1;
+	}
+	console.log(index);
+});
