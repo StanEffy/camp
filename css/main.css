@@ -745,9 +745,10 @@ input[type='radio'].visually-hidden {
 .pictures-container {
   position: relative;
   width: 300px;
+  height: 200px;
   margin-right: 20px;
   margin-top: 20px;
-  margin-bottom: 20px; }
+  margin-bottom: 50px; }
 
 .news-picture {
   max-width: 100%;
@@ -778,10 +779,59 @@ input[type='radio'].visually-hidden {
   right: 0; }
 
 .pictures-container__button--fullscreen {
-  border: 5px solid #ffffff;
-  top: 40%;
+  top: 87%;
   height: 50px;
-  left: 43%; }
+  width: 100%;
+  font-size: 1em;
+  box-sizing: border-box;
+  background-color: black; }
+
+.pictures-container--fullscreen {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  left: 0;
+  z-index: 1; }
+
+.pictures-container--fullscreen .pictures-container__button--fullscreen {
+  display: none; }
+
+.pictures-container__button--close {
+  display: none; }
+
+.pictures-container--fullscreen .pictures-container__button--close {
+  display: block;
+  position: absolute;
+  height: 50px;
+  opacity: 1;
+  background-color: #000000;
+  top: -50px;
+  right: 0px; }
+  .pictures-container--fullscreen .pictures-container__button--close:hover {
+    opacity: 0.6; }
+  .pictures-container--fullscreen .pictures-container__button--close:after {
+    position: relative;
+    width: 45px;
+    height: 5px;
+    background-color: #ffffff;
+    content: '';
+    display: block;
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+    top: -4px;
+    border-radius: 5px; }
+  .pictures-container--fullscreen .pictures-container__button--close:before {
+    position: relative;
+    width: 45px;
+    height: 5px;
+    background-color: #ffffff;
+    content: '';
+    display: block;
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    border-radius: 5px; }
 
 @media (min-width: 700px) {
   .news-page-cover {
@@ -817,7 +867,20 @@ input[type='radio'].visually-hidden {
     margin-bottom: 0;
     padding-right: 40px;
     padding-bottom: 20px;
-    padding-top: 0; } }
+    padding-top: 0; }
+  .pictures-container--fullscreen {
+    position: absolute;
+    width: 70%;
+    height: auto;
+    left: 15%;
+    z-index: 1; }
+  .pictures-container--fullscreen .pictures-container__button--close {
+    display: block;
+    position: absolute;
+    height: 50px;
+    opacity: 1;
+    background-color: #000000;
+    right: -50px; } }
 
 .news-item__cover {
   padding-bottom: 40px; }
